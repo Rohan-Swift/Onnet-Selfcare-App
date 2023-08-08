@@ -79,8 +79,11 @@ class _BoxSummaryState extends State<BoxSummary> {
     showModalBottomSheet(
       context: context,
       showDragHandle: true,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(10.0),
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(30),
+          topRight: Radius.circular(30),
+        ),
       ),
       builder: (BuildContext context) {
         return SizedBox(
@@ -98,21 +101,55 @@ class _BoxSummaryState extends State<BoxSummary> {
                   ),
                 ),
               ),
-              Expanded(
-                child: ListView.builder(
-                  itemCount: userSelectedChannels.length,
-                  itemBuilder: (context, index) {
-                    return ListTile(
-                      leading: Image.asset(
-                        "assets/images/onnetshield.png",
-                        height: 30,
-                        width: 30,
+              if (userSelectedChannels.isEmpty)
+                Center(
+                  child: Column(
+                    children: [
+                      const SizedBox(
+                        height: 50,
                       ),
-                      title: Text(userSelectedChannels[index]),
-                    );
-                  },
+                      const Text(
+                        'Nothing to show...',
+                        style: TextStyle(fontSize: 18),
+                      ),
+                      const SizedBox(
+                        height: 15,
+                      ),
+                      const Text(
+                          'Choose from a wide range of packs and channels from'),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.pop(context);
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => const ManagePack()));
+                        },
+                        child: const Text(
+                          'here',
+                          style: TextStyle(color: Colors.deepPurple),
+                        ),
+                      ),
+                    ],
+                  ),
+                )
+              else
+                Expanded(
+                  child: ListView.builder(
+                    itemCount: userSelectedChannels.length,
+                    itemBuilder: (context, index) {
+                      return ListTile(
+                        leading: Image.asset(
+                          "assets/images/onnetshield.png",
+                          height: 30,
+                          width: 30,
+                        ),
+                        title: Text(userSelectedChannels[index]),
+                      );
+                    },
+                  ),
                 ),
-              ),
             ],
           ),
         );
@@ -212,13 +249,19 @@ class _BoxSummaryState extends State<BoxSummary> {
                               width: 140,
                               child: Column(
                                 children: [
-                                  const Row(
+                                  Row(
                                     mainAxisAlignment: MainAxisAlignment.end,
                                     children: [
-                                      Text('Account Balance'),
-                                      Icon(
-                                        Icons.refresh,
-                                        color: Colors.deepPurple,
+                                      const Text('Account Balance'),
+                                      GestureDetector(
+                                        onTap: () {
+                                          isLoading = true;
+                                          fetchBoxData();
+                                        },
+                                        child: const Icon(
+                                          Icons.refresh,
+                                          color: Colors.deepPurple,
+                                        ),
                                       ),
                                     ],
                                   ),

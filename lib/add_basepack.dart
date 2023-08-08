@@ -83,6 +83,12 @@ class _AddBasepackState extends State<AddBasepack> {
     allItemID.clear();
     showModalBottomSheet(
       showDragHandle: true,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(30),
+          topRight: Radius.circular(30),
+        ),
+      ),
       context: context,
       builder: (BuildContext context) {
         return Container(

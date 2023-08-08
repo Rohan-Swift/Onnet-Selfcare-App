@@ -94,6 +94,13 @@ class _LoginScreenState extends State<LoginScreen> {
                             ),
                             borderSide: BorderSide(color: Colors.deepPurple),
                           ),
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(10),
+                            ),
+                            borderSide: BorderSide(color: Colors.deepPurple),
+                          ),
+                          floatingLabelStyle: TextStyle(color: Colors.deepPurple),
                           labelText: 'Username',
                         ),
                       ),
@@ -115,7 +122,14 @@ class _LoginScreenState extends State<LoginScreen> {
                             ),
                             borderSide: BorderSide(color: Colors.orange),
                           ),
-                          labelText: 'Password',
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(10),
+                            ),
+                            borderSide: BorderSide(color: Colors.deepPurple),
+                          ),
+                          floatingLabelStyle: TextStyle(color: Colors.deepPurple),
+                           labelText: 'Password',
                           fillColor: Colors.white,
                         ),
                       ),

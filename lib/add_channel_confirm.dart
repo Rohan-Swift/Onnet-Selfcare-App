@@ -157,7 +157,7 @@ class _ChannelConfirmState extends State<ChannelConfirm> {
                               width: 20,
                             ),
                             SizedBox(
-                              width: 297,
+                              width: 296,
                               child: Text(
                                 'The below items will get added to/ dropped from your box. The rest will remain the same',
                               ),

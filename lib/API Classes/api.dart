@@ -338,7 +338,7 @@ class AddChannels {
   Future<void> makePutRequest() async {
     final Map<String, dynamic> requestBody = {
       "subscriberCode": "BAN0000001",
-      "stbId": 33,
+      "stbId": 34,
       "bouquetId": allItemID.join(","),
       "duration": 1,
     };
@@ -383,7 +383,7 @@ class RemoveChannelsAPI {
 
     final Map<String, dynamic> requestBody = {
       "subscriberCode": "BAN0000001",
-      "stbId": 33,
+      "stbId": 34,
     };
 
     try {
@@ -413,7 +413,7 @@ class RemoveChannelsAPI {
   Future<void> removeChannels() async {
     final Map<String, dynamic> requestBody = {
       "subscriberCode": "BAN0000001",
-      "stbId": 33,
+      "stbId": 34,
       "bouquetIds": globalRemoveChannelIDs.join(",")
     };
 
