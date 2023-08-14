@@ -15,7 +15,6 @@ void main() {
       ),
       home: const MyApp(),
       debugShowCheckedModeBanner: false,
-
     ),
   );
 }
@@ -46,7 +45,6 @@ class MyApp extends StatelessWidget {
       defaultNextScreen: const LoginScreen(),
     );
 
-    
     // FlutterSplashScreen.gif(
     //   gifPath: 'assets/videos/splash.gif',
     //   backgroundColor: Colors.deepPurple,

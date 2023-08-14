@@ -86,6 +86,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       height: 50,
                       child: TextField(
                         controller: textField,
+                        keyboardType: TextInputType.emailAddress,
                         focusNode: text,
                         decoration: const InputDecoration(
                           border: OutlineInputBorder(

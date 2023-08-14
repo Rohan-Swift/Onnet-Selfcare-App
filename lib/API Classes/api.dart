@@ -109,7 +109,7 @@ class GetUserSubscription {
     Map<String, dynamic> body,
   ) async {
     String apiUrl = baseURL +
-        getSubscriptionBySubscriberCodeAndStbIdActive; // Replace with your API endpoint
+        getSubscriptionBySubscriberCodeAndStbIdActive;
 
     try {
       final response = await http.post(
@@ -214,7 +214,7 @@ class BasePackAPIs {
         Uri.parse(url),
         headers: {
           'Authorization':
-              'Bearer $token', // Add the bearer token in the headers
+              'Bearer $token', 
           'Content-Type': 'application/json',
         },
       );
@@ -337,8 +337,8 @@ class AlacarteApis {
 class AddChannels {
   Future<void> makePutRequest() async {
     final Map<String, dynamic> requestBody = {
-      "subscriberCode": "BAN0000001",
-      "stbId": 34,
+      "subscriberCode": "BAN0000004",
+      "stbId": 40,
       "bouquetId": allItemID.join(","),
       "duration": 1,
     };
@@ -382,8 +382,8 @@ class RemoveChannelsAPI {
     String url = baseURL + getSubscriptionBySubscriberCodeAndStbIdActive;
 
     final Map<String, dynamic> requestBody = {
-      "subscriberCode": "BAN0000001",
-      "stbId": 34,
+      "subscriberCode": "BAN0000004",
+      "stbId": 40,
     };
 
     try {
@@ -400,20 +400,20 @@ class RemoveChannelsAPI {
         final jsonData = response.body;
         return parseRemoveChannels(jsonData);
       } else {
-        throw Exception('Failed to fetch data');
+        throw Exception('Failed to fetch channel data');
       }
     } catch (e) {
       if (kDebugMode) {
         print('Error occurred: $e');
       }
-      throw Exception('Failed to fetch data');
+      throw Exception('Failed to fetch channel data 1');
     }
   }
 
   Future<void> removeChannels() async {
     final Map<String, dynamic> requestBody = {
-      "subscriberCode": "BAN0000001",
-      "stbId": 34,
+      "subscriberCode": "BAN0000004",
+      "stbId": 40,
       "bouquetIds": globalRemoveChannelIDs.join(",")
     };
 

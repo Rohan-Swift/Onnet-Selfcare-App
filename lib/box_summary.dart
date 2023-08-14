@@ -58,8 +58,8 @@ class _BoxSummaryState extends State<BoxSummary> {
       setState(() {});
 
       Map<String, dynamic> requestBody = {
-        "subscriberCode": "BAN0000001",
-        "stbId": 33,
+        "subscriberCode": "BAN0000004",
+        "stbId": 40,
       };
 
       Map<String, dynamic> jsonResponse =
@@ -116,7 +116,7 @@ class _BoxSummaryState extends State<BoxSummary> {
                         height: 15,
                       ),
                       const Text(
-                          'Choose from a wide range of packs and channels from'),
+                          'Choose a wide range of packs and channels from'),
                       const SizedBox(
                         height: 10,
                       ),
